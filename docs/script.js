@@ -1,3 +1,5 @@
+
+
 const gallery = document.getElementById("gallery");
 
 // Lijst met valid Picsum image IDs
@@ -29,7 +31,7 @@ const loadImage = () => {
 };
 
 
-const loadImages = (count = 20) => {
+const loadImages = (count = 25) => {
     for (let i = 0; i < count; i++) {
         gallery.appendChild(loadImage());
     }
@@ -61,4 +63,7 @@ window.addEventListener("scroll", infiniteScroll);
 window.addEventListener("resize", fillScreenWithImages); 
 
 fillScreenWithImages(); 
-loadImages(20); 
+loadImages(25); 
+
+
+

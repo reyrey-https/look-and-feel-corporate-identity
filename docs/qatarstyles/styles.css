@@ -1,0 +1,111 @@
+
+@font-face {
+    font-family: 'formlettertype';
+    src: url(fonts/BellotaText-Light.otf);
+}
+
+:root {
+    color-scheme: light dark;
+
+    --light: white;
+    --light-code: tomato;
+    --light-button: #f9ff1e;
+    --light-filter-button: #464646;
+    --light-hover-button: #000000;
+    --light-hover-button-text: #ffffff;
+    --light-form-field: #464646;
+
+    --dark: black;
+    --dark-code: gold;
+    --dark-button: #ED3CBA;
+    --dark-filter-button: #878787;
+    --dark-hover-button: #ffffff;
+    --dark-hover-button-text: #000000;
+    --dark-form-field: #9c9c9c;
+
+    --primary-button: rgba(255, 255, 255, .4);
+    --accent-grey: #464646;
+    --accent-light-blue: #79aafa;
+    --accent-pink: #ED3CBA;
+    --accent-light-orange: #ffc200;
+    --accent-yellow: #f9ff1e;
+    --main-white: white;
+    --main-black: black;
+}
+
+* {
+    background-color: light-dark(var(--light), var(--dark));
+    color: light-dark(var(--dark), var(--light));
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Canvas container styling */
+#canvas-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Masonry layout */
+#masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    align-items: start;
+    padding: 10px;
+    position: absolute;
+}
+
+#masonry img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#masonry img:hover {
+    transform: scale(1.1);
+}
+
+#masonry .blur {
+    filter: blur(5px);
+}
+
+/* Button styles from style guide */
+.button {
+    --spacing: 0.5rem;
+    background-color: light-dark(var(--light-button), var(--dark-button));
+    color: light-dark(var(--dark), var(--light));
+    padding: var(--spacing);
+    margin: var(--spacing);
+    border: 2px solid;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: light-dark(var(--light-hover-button), var(--dark-hover-button));
+    color: light-dark(var(--light-hover-button-text), var(--dark-hover-button-text));
+}
+
+/* Custom colors and accents from style guide */
+.main-color-white {
+    background-color: var(--main-white);
+}
+
+.main-color-black {
+    background-color: var(--main-black);
+}
+
+.accent-color-one {
+    background-color: var(--accent-light-blue);
+}
+
+.accent-color-two {
+    background-color: var(--accent-pink);
+}
